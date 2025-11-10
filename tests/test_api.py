@@ -40,4 +40,4 @@ def test_predict_endpoint_valid_input():
     assert 0.0 <= data["churn_probability"] <= 1.0, "churn_probability fuera de rango [0,1]"
     
     # Verificar que la predicción sea 0 o 1
-    assert data["prediction"] in [0, 1], "prediction no es 0 o 1"
+    assert data["prediction"] in ["Yes", "No"], "prediction no es 'Yes' o 'No'"
