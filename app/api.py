@@ -38,4 +38,3 @@ def predict(data: Input):
         "churn_probability": round(float(proba), 2),
         "prediction": "Yes" if proba > 0.5 else "No"
     }
-
