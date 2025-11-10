@@ -7,7 +7,7 @@ model = joblib.load("telco_churn_model.joblib")
 
 app = FastAPI()
 
-# 👉 Ahora el Input es un diccionario con campos nombrados
+
 class Input(BaseModel):
     gender: str = None
     SeniorCitizen: str = None
@@ -38,3 +38,4 @@ def predict(data: Input):
         "churn_probability": round(float(proba), 2),
         "prediction": "Yes" if proba > 0.5 else "No"
     }
+
