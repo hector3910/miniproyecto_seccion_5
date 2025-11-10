@@ -27,17 +27,17 @@ def test_predict_endpoint_valid_input():
     }
 
     response = client.post("/predict", json=payload)
-    assert response.status_code == 200, "
+    assert response.status_code == 200, "La API no respondió con código 200"
 
     data = response.json()
 
     # Validar que estén las claves esperadas
-    assert "churn_probability" in data, 
-    assert "prediction" in data, 
+    assert "churn_probability" in data, "Falta 'churn_probability' en la respuesta"
+    assert "prediction" in data, "Falta 'prediction' en la respuesta"
 
     # Validar tipos y rango de valores
-    assert isinstance(data["churn_probability"], float), 
-    assert 0.0 <= data["churn_probability"] <= 1.0, 
+    assert isinstance(data["churn_probability"], float), "churn_probability no es float"
+    assert 0.0 <= data["churn_probability"] <= 1.0, "churn_probability fuera de rango [0,1]"
     
     # Verificar que la predicción sea 0 o 1
-    assert data["prediction"] in [0, 1], 
+    assert data["prediction"] in [0, 1], "prediction no es 0 o 1"
