@@ -48,7 +48,7 @@ Para cualquiera de los dos casos que decida ejecutar:
 
 
 <p align="center">
-  <img src="assets/churn-mlops" width="600" alt="Vista previa de la API">
+  <img src="assets/churn-mlops.gif" width="600" alt="Vista previa de la API">
 </p>
 
 
