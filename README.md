@@ -28,9 +28,14 @@ uvicorn app.api:app --reload  # Desarrollo local
 ### Ejecución de la **API** usando docker
 ```bash
 docker build -t telco-churn-api .
-docker run -p 8000:8000 telco-churn-api
+docker run -d --name telco-churn-container -p 8000:8000 telco-churn
 ```
-
+Utilizamos los siguientes pasos para iniciar, detener y ver estado
+```bash
+docker start telco-churn-container
+docker stop telco-churn-container
+docker ps -a | grep telco-churn
+```
 Para cualquiera de los dos casos que decida ejecutar:
 
 - Si desea acceder a la **API**, use el siguiente enlace en su navegador: http://127.0.0.1:8000/docs
